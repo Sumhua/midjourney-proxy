@@ -231,8 +231,8 @@ public class DiscordServiceImpl implements DiscordService {
 			return Message.of(responseEntity.getStatusCodeValue(), CharSequenceUtil.sub(responseEntity.getBody(), 0, 100));
 		} catch (HttpClientErrorException e) {
 			try {
-				JSONObject error = new JSONObject(e.getResponseBodyAsString());
-				return Message.of(error.optInt("code", e.getRawStatusCode()), error.optString("message"));
+				//JSONObject error = new JSONObject(e.getStatusText());
+				return Message.of(e.getRawStatusCode(), e.getStatusText());
 			} catch (Exception je) {
 				return Message.of(e.getRawStatusCode(), CharSequenceUtil.sub(e.getMessage(), 0, 100));
 			}

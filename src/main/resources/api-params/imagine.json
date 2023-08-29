@@ -2,12 +2,12 @@
   "type": 2,
   "guild_id": "$guild_id",
   "channel_id": "$channel_id",
-  "application_id": "936929561302675456",
+  "application_id": "1049413890276077690",
   "session_id": "$session_id",
   "nonce": "$nonce",
   "data": {
-    "version": "1118961510123847772",
-    "id": "938956540159881230",
+    "version": "1097917133435961365",
+    "id": "1049422742912507994",
     "name": "imagine",
     "type": 1,
     "options": [
