@@ -19,8 +19,8 @@ public class ConvertUtils {
 	/**
 	 * content正则匹配prompt和进度.
 	 */
-	public static final String CONTENT_REGEX = ".*?\\*\\*(.*?)\\*\\*.+<@\\d+> \\((.*?)\\)";
-
+	//public static final String CONTENT_REGEX = ".*?\\*\\*(.*?)\\*\\*.+<@\\d+> \\((.*?)\\)";
+	private static final String CONTENT_REGEX = "\\*\\*(.*?)\\*\\* - <@\\d+>";
 	public static ContentParseData parseContent(String content) {
 		return parseContent(content, CONTENT_REGEX);
 	}
@@ -35,7 +35,9 @@ public class ConvertUtils {
 		}
 		ContentParseData parseData = new ContentParseData();
 		parseData.setPrompt(matcher.group(1));
-		parseData.setStatus(matcher.group(2));
+		//parseData.setNonce(matcher.group(2));
+		if(matcher.groupCount()>1)
+		  parseData.setStatus(matcher.group(2));
 		return parseData;
 	}
 

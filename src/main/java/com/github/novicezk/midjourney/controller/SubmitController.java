@@ -82,6 +82,7 @@ public class SubmitController {
 		}
 		task.setPromptEn(promptEn);
 		task.setDescription("/imagine " + prompt);
+		task.setProperty(Constants.TASK_PROPERTY_FINAL_PROMPT, promptEn);
 		return this.taskService.submitImagine(task, dataUrls);
 	}
 

@@ -18,7 +18,10 @@ import java.util.Set;
 @Component
 public class VariationSuccessHandler extends MessageHandler {
 	private static final String CONTENT_REGEX_1 = "\\*\\*(.*?)\\*\\* - Variations by <@\\d+> \\((.*?)\\)";
+	//private static final String CONTENT_REGEX_1 = "\\*\\*(.*?)\\*\\* - Variations by <@\\d+>";
+
 	private static final String CONTENT_REGEX_2 = "\\*\\*(.*?)\\*\\* - Variations \\(.*?\\) by <@\\d+> \\((.*?)\\)";
+	//private static final String CONTENT_REGEX_2 = "\\*\\*(.*?)\\*\\* - Variations \\(.*?\\) by <@\\d+>";
 
 	@Override
 	public void handle(MessageType messageType, DataObject message) {
