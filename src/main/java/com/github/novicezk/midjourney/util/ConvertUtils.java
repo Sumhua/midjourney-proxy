@@ -18,9 +18,11 @@ import java.util.regex.Pattern;
 public class ConvertUtils {
 	/**
 	 * content正则匹配prompt和进度.
+	 *  UPDATE - Midjourney Bot: **technology revolution --s 750** - <@1140456352959967403> (93%) (fast)
+	 *  CREATE - Midjourney Bot: **technology revolution --s 750** - <@1140456352959967403> (fast)
 	 */
-	//public static final String CONTENT_REGEX = ".*?\\*\\*(.*?)\\*\\*.+<@\\d+> \\((.*?)\\)";
-	private static final String CONTENT_REGEX = "\\*\\*(.*?)\\*\\* - <@\\d+>";
+	public static final String CONTENT_REGEX = ".*?\\*\\*(.*?)\\*\\*.+<@\\d+> \\((.*?)\\)";
+	//private static final String CONTENT_REGEX = "\\*\\*(.*?)\\*\\* - <@\\d+>";
 	public static ContentParseData parseContent(String content) {
 		return parseContent(content, CONTENT_REGEX);
 	}
