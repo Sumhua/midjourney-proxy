@@ -35,7 +35,6 @@ public class StartAndProgressHandler extends MessageHandler {
 			if (task == null) {
 				return;
 			}
-			System.out.println("task start,message id is " + message.getString("id"));
 			task.setProperty(Constants.TASK_PROPERTY_PROGRESS_MESSAGE_ID, message.getString("id"));
 			// 兼容少数content为空的场景
 			if (parseData != null) {

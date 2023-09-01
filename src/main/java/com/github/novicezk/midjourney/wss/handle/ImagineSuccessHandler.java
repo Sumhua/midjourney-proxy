@@ -22,11 +22,10 @@ public class ImagineSuccessHandler extends MessageHandler {
     //BlueWillow: **sunny night with blinking star,a red dressed girl walking slowly** - <@1091519978018185326>
 	@Override
 	public void handle(MessageType messageType, DataObject message) {
-		System.out.println("DataObject pst "+  message.toPrettyString());
+		//System.out.println("DataObject pst "+  message.toPrettyString());
 		String content = getMessageContent(message);
 		ContentParseData parseData = ConvertUtils.parseContent(content, CONTENT_REGEX);
 		if (MessageType.CREATE.equals(messageType) && parseData != null && hasImage(message)) {
-			System.out.println("task success,message id is " + message.getString("id"));
 			TaskCondition condition = new TaskCondition()
 					.setActionSet(Set.of(TaskAction.IMAGINE))
 					.setFinalPromptEn(parseData.getPrompt());
